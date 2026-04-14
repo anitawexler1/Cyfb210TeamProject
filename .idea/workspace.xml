@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="118df6e7-28c6-4434-ba2e-36382a2c6aaf" name="Changes" comment="finished second method">
+    <list default="true" id="118df6e7-28c6-4434-ba2e-36382a2c6aaf" name="Changes" comment="updated the two methods">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -91,22 +91,31 @@
       <option name="project" value="LOCAL" />
       <updated>1776207557810</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="updated the two methods">
+      <option name="closed" value="true" />
+      <created>1776208156925</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1776208156925</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="started first method" />
     <MESSAGE value="finished first method" />
     <MESSAGE value="finished second method" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished second method" />
+    <MESSAGE value="updated the two methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated the two methods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>30</line>
-          <option name="timeStamp" value="1" />
+          <line>15</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

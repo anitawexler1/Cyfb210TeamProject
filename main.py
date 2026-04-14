@@ -15,8 +15,7 @@ class SecureBrowserSimulator:
         url_domain = url.split("www.")[1]
         if self.current_page != "":
             self.back_stack.push(self.current_page)
-        else:
-            self.current_page = url
+        self.current_page = url
         while not self.forward_stack.is_empty():
             self.forward_stack.pop()
         if self.detect_malicious_url(url):
@@ -33,7 +32,16 @@ class SecureBrowserSimulator:
                 return True
         return False
 
+    def back_navigation(self):
+        if not self.back_stack.is_empty():
+            self.forward_stack.push(self.current_page)
+            self.current_page = self.back_stack.pop()
+            print(f"Current page: {self.current_page}")
+        else:
+            print("There is no history.")
+
 test = SecureBrowserSimulator()
+
 
 
 
