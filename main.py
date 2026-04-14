@@ -27,6 +27,19 @@ class SecureBrowserSimulator:
                 self.security_alerts.append(f"Malicious keyword: {keyword}")
         print(url)
 
+    def detect_malicious_url(self, url):
+        url_domain = url.split("www")
+        for domain in self.malicious_domains:
+            if domain in url_domain:
+                return True
+            else:
+                return False
+        for keyword in self.malicious_keywords:
+            if keyword in url_domain:
+                return True
+            else:
+                return False
+
 
 
 
