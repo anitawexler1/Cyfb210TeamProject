@@ -12,33 +12,29 @@ class SecureBrowserSimulator:
 
 
     def visit_url(self, url):
-        url_domain = url.split("www")
+        url_domain = url.split("www.")[1]
         if self.current_page != "":
             self.back_stack.push(self.current_page)
         else:
             self.current_page = url
         while not self.forward_stack.is_empty():
             self.forward_stack.pop()
-        for domain in self.malicious_domains:
-            if domain in self.current_page:
-                self.security_alerts.append(f"Malicious domain: {domain}")
-        for keyword in self.malicious_keywords:
-            if keyword in self.current_page:
-                self.security_alerts.append(f"Malicious keyword: {keyword}")
+        if self.detect_malicious_url(url):
+            self.security_alerts.append("Malicious URL!")
         print(url)
 
     def detect_malicious_url(self, url):
-        url_domain = url.split("www")
+        url_domain = url.split("www.")[1]
         for domain in self.malicious_domains:
             if domain in url_domain:
                 return True
-            else:
-                return False
         for keyword in self.malicious_keywords:
             if keyword in url_domain:
                 return True
-            else:
-                return False
+        return False
+
+test = SecureBrowserSimulator()
+
 
 
 
