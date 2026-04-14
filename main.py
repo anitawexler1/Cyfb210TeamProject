@@ -40,7 +40,27 @@ class SecureBrowserSimulator:
         else:
             print("There is no history.")
 
-test = SecureBrowserSimulator()
+    def forward_navigation(self):
+        if not self.forward_stack.is_empty():
+            self.back_stack.push(self.current_page)
+            self.current_page = self.forward_stack.pop()
+            print(f"Current page: {self.current_page}")
+        else:
+            print("There is no forward history.")
+
+    def show_history(self):
+        print(f"History: {self.back_stack}"
+              f"\nCurrent page: {self.current_page}"
+              f"\nForward history: {self.forward_stack}")
+
+    def show_security_alerts(self):
+        if self.security_alerts:
+            print(f"Security alerts: {self.security_alerts}")
+        else:
+            print("There are no security alerts.")
+
+
+
 
 
 
