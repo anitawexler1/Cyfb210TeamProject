@@ -12,7 +12,10 @@ class SecureBrowserSimulator:
 
 
     def visit_url(self, url):
-        url_domain = url.split("www.")[1]
+        if "www." in url:
+            url_domain = url.split("www.")[1]
+        else:
+            url_domain = url
         if self.current_page != "":
             self.back_stack.push(self.current_page)
         self.current_page = url
@@ -23,7 +26,10 @@ class SecureBrowserSimulator:
         print(url)
 
     def detect_malicious_url(self, url):
-        url_domain = url.split("www.")[1]
+        if "www." in url:
+            url_domain = url.split("www.")[1]
+        else:
+            url_domain = url
         for domain in self.malicious_domains:
             if domain in url_domain:
                 return True
@@ -59,6 +65,31 @@ class SecureBrowserSimulator:
         else:
             print("There are no security alerts.")
 
+while True:
+    user_browser = SecureBrowserSimulator()
+    print("Here is a list of possible commands:"
+          "\nVisit"
+          "\nBack"
+          "\nForward"
+          "\nHistory"
+          "\nAlerts"
+          "\nExit")
+    user_input = input("Enter a command: ")
+    if user_input.lower() == "exit":
+        break
+    elif user_input.lower() == "visit":
+        user_url = input("Enter a URL: ")
+        user_browser.visit_url(user_url)
+    elif user_input.lower() == "back":
+        user_browser.back_navigation()
+    elif user_input.lower() == "forward":
+        user_browser.forward_navigation()
+    elif user_input.lower() == "history":
+        user_browser.show_history()
+    elif user_input.lower() == "alerts":
+        user_browser.show_security_alerts()
+    else:
+        print("Please enter a valid command.")
 
 
 
