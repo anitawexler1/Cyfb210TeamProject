@@ -65,15 +65,11 @@ class SecureBrowserSimulator:
         else:
             print("There are no security alerts.")
 
+user_browser = SecureBrowserSimulator()
+
 while True:
-    user_browser = SecureBrowserSimulator()
     print("Here is a list of possible commands:"
-          "\nVisit"
-          "\nBack"
-          "\nForward"
-          "\nHistory"
-          "\nAlerts"
-          "\nExit")
+          "\nVisit, Back, Forward, History, Alerts, Exit")
     user_input = input("Enter a command: ")
     if user_input.lower() == "exit":
         break
